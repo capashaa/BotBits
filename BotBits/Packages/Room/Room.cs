@@ -231,7 +231,6 @@ namespace BotBits
             this.WorldStatus = e.WorldStatus;
             this.MinimapEnabled = e.MinimapEnabled;
             this.LobbyPreviewEnabled = e.LobbyPreviewEnabled;
-            this.OwnerConnectUserId = e.OwnerConnectUserId;
 
             this.InitComplete = true;
 
