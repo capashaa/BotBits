@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Version>262.0.3</Version>
     <PackageId>BotBits</PackageId>
     <Description>An Everybody Edits framework designed for performance and reliability.</Description>
