@@ -31,19 +31,24 @@ namespace BotBits.Events
             this.Friend = message.GetBoolean(12);
             this.GoldMember = message.GetBoolean(13);
             this.GoldBorder = message.GetBoolean(14);
-            this.Team = (Team)message.GetInt(15);
-            this.AuraShape = (AuraShape)message.GetInt(16);
-            this.AuraColor = (AuraColor)message.GetInt(17);
-            this.ChatColor = message.GetUInt(18);
-            this.Badge = message.GetBadge(19);
-            this.CrewMember = message.GetBoolean(20);
-            this.PurpleSwitches = VarintHelper.ToInt32Array(message.GetByteArray(21));
-            this.HasEditRights = message.GetBoolean(22);
-            this.HasGodRights = message.GetBoolean(23);
+            this.InModeratorMode = message.GetBoolean(15);
+            this.Team = (Team)message.GetInt(16);
+            this.AuraShape = (AuraShape)message.GetInt(17);
+            this.AuraColor = (AuraColor)message.GetInt(18);
+            this.ChatColor = message.GetUInt(19);
+            this.Badge = message.GetBadge(20);
+            this.CrewMember = message.GetBoolean(21);
+            this.PurpleSwitches = VarintHelper.ToInt32Array(message.GetByteArray(22));
+            this.StaffAuraOffset = message.GetInt(23);
+            this.HasEditRights = message.GetBoolean(24);
+            this.HasGodRights = message.GetBoolean(25);
         }
         
         public bool GoldBorder { get; set; }
 
+        public int StaffAuraOffset { get; set; }
+
+        public bool InModeratorMode { get; set; }
         public bool HasEditRights { get; set; }
 
         public bool HasGodRights { get; set; }
