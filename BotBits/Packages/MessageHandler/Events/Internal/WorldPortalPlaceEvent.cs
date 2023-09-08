@@ -14,12 +14,13 @@ namespace BotBits.Events
         /// <param name="message">The message.</param>
         /// <param name="client"></param>
         internal WorldPortalPlaceEvent(BotBitsClient client, Message message)
-            : base(client, message, 4)
+            : base(client, message, 5)
         {
             this.X = message.GetInteger(0);
             this.Y = message.GetInteger(1);
             this.Id = message.GetInteger(2);
             this.WorldPortalTarget = message.GetString(3);
+            this.WorldPortalId = message.GetInteger(4);
         }
 
         /// <summary>
@@ -27,6 +28,12 @@ namespace BotBits.Events
         /// </summary>
         /// <value>The world portal target.</value>
         public string WorldPortalTarget { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the world portal id.
+        /// </summary>
+        /// <value>The world portal id.</value>
+        public int WorldPortalId{ get; set; }
 
         /// <summary>
         ///     Gets or sets the block id.

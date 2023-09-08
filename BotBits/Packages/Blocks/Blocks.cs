@@ -145,9 +145,15 @@ namespace BotBits
         }
 
         [EventListener]
+        private void On(NPCPlaceEvent e)
+        {
+            this.RaiseForegroundData(e.Player, e.X, e.Y, (Foreground.Id)e.Id, e.Name,e.Message1,e.Message2,e.Message3);
+        }
+
+        [EventListener]
         private void On(WorldPortalPlaceEvent e)
         {
-            this.RaiseForegroundData(e.Player, e.X, e.Y, (Foreground.Id)e.Id, e.WorldPortalTarget);
+            this.RaiseForegroundData(e.Player, e.X, e.Y, (Foreground.Id)e.Id, e.WorldPortalTarget,e.Id);
         }
 
         [EventListener]

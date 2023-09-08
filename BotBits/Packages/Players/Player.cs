@@ -109,12 +109,57 @@ namespace BotBits
         public bool HasChat { get; internal set; }
 
         /// <summary>
-        ///     Gets the player's smiley.
+        ///     Gets or sets the smiley shape
         /// </summary>
-        /// <value>
-        ///     The player's smiley.
-        /// </value>
-        public Smiley Smiley { get; internal set; }
+        /// <value>The Smiley Shape</value>
+        public SmileyShape SmileyShape { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley colour
+        /// </summary>
+        /// <value>The Smiley Colour</value>
+        public SmileyColour SmileyColour { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley border
+        /// </summary>
+        /// <value>The Smiley Border</value>
+        public int SmileyBorder { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley eyes
+        /// </summary>
+        /// <value>The Smiley Eyes</value>
+        public SmileyEyes SmileyEyes { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley mouth
+        /// </summary>
+        /// <value>The Smiley Mouth</value>
+        public SmileyMouth SmileyMouth { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley addon
+        /// </summary>
+        /// <value>The Smiley Addon</value>
+        public SmileyAddon SmileyAddon { get; internal set; }
+        /// <summary>
+        ///     Gets or sets the smiley above
+        /// </summary>
+        /// <value>The Smiley Above look</value>
+        public SmileyAbove SmileyAbove { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley below
+        /// </summary>
+        /// <value>The Smiley Below look</value>
+        public SmileyBelow SmileyBelow { get; internal set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley wings
+        /// </summary>
+        /// <value>The Smiley Wings</value>
+        public SmileyWings SmileyWings { get; internal set; }
 
         /// <summary>
         ///     Gets the aura color that apperars around this user when they go in god mode.

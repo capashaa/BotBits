@@ -9,7 +9,15 @@ namespace BotBits
 {
     public static class ItemServices
     {
-        private static readonly ConcurrentDictionary<Smiley, PackAttribute> _smileyPacks = new ConcurrentDictionary<Smiley, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyShape, PackAttribute> _smileyShapePacks = new ConcurrentDictionary<SmileyShape, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyColour, PackAttribute> _smileyColourPacks = new ConcurrentDictionary<SmileyColour, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyBorder, PackAttribute> _smileyBorderPacks = new ConcurrentDictionary<SmileyBorder, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyEyes, PackAttribute> _smileyEyesPacks = new ConcurrentDictionary<SmileyEyes, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyMouth, PackAttribute> _smileyMouthPacks = new ConcurrentDictionary<SmileyMouth, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyAddon, PackAttribute> _smileyAddonPacks = new ConcurrentDictionary<SmileyAddon, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyAbove, PackAttribute> _smileyAbovePacks = new ConcurrentDictionary<SmileyAbove, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyBelow, PackAttribute> _smileyBelowPacks = new ConcurrentDictionary<SmileyBelow, PackAttribute>();
+        private static readonly ConcurrentDictionary<SmileyWings, PackAttribute> _smileyWingsPacks = new ConcurrentDictionary<SmileyWings, PackAttribute>();
         private static readonly ConcurrentDictionary<AuraColor, PackAttribute> _auraColorPacks = new ConcurrentDictionary<AuraColor, PackAttribute>();
         private static readonly ConcurrentDictionary<AuraShape, PackAttribute> _auraShapePacks = new ConcurrentDictionary<AuraShape, PackAttribute>();
         private static readonly ConcurrentDictionary<int, PackAttribute> _blockPacks = new ConcurrentDictionary<int, PackAttribute>();
@@ -19,7 +27,15 @@ namespace BotBits
         {
             LoadPacks(typeof(Background));
             LoadPacks(typeof(Foreground));
-            LoadEnum(_smileyPacks);
+            LoadEnum(_smileyShapePacks);
+            LoadEnum(_smileyColourPacks);
+            LoadEnum(_smileyBorderPacks);
+            LoadEnum(_smileyEyesPacks);
+            LoadEnum(_smileyMouthPacks);
+            LoadEnum(_smileyAddonPacks);
+            LoadEnum(_smileyAbovePacks);
+            LoadEnum(_smileyBelowPacks);
+            LoadEnum(_smileyWingsPacks);
             LoadEnum(_auraColorPacks);
             LoadEnum(_auraShapePacks);
         }
@@ -55,13 +71,61 @@ namespace BotBits
             return pack;
         }
 
-        public static PackAttribute GetPackage(Smiley id)
+        public static PackAttribute GetPackage(SmileyShape id)
         {
             PackAttribute pack;
-            _smileyPacks.TryGetValue(id, out pack);
+            _smileyShapePacks.TryGetValue(id, out pack);
             return pack;
         }
 
+        public static PackAttribute GetPackage(SmileyColour id)
+        {
+            PackAttribute pack;
+            _smileyColourPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyBorder id)
+        {
+            PackAttribute pack;
+            _smileyBorderPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyEyes id)
+        {
+            PackAttribute pack;
+            _smileyEyesPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyMouth id)
+        {
+            PackAttribute pack;
+            _smileyMouthPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyAbove id)
+        {
+            PackAttribute pack;
+            _smileyAbovePacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyBelow id)
+        {
+            PackAttribute pack;
+            _smileyBelowPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyAddon id)
+        {
+            PackAttribute pack;
+            _smileyAddonPacks.TryGetValue(id, out pack);
+            return pack;
+        }
+        public static PackAttribute GetPackage(SmileyWings id)
+        {
+            PackAttribute pack;
+            _smileyWingsPacks.TryGetValue(id, out pack);
+            return pack;
+        }
         public static PackAttribute GetPackage(Foreground.Id id)
         {
             return GetPackageInternal((int)id);
@@ -82,11 +146,48 @@ namespace BotBits
             _auraColorPacks[id] = package;
         }
 
-        public static void SetPackage(Smiley id, PackAttribute package)
+        public static void SetPackage(SmileyShape id, PackAttribute package)
         {
-            _smileyPacks [id] = package;
+            _smileyShapePacks[id] = package;
         }
 
+        public static void SetPackage(SmileyColour id, PackAttribute package)
+        {
+            _smileyColourPacks[id] = package;
+        }
+
+        public static void SetPackage(SmileyBorder id, PackAttribute package)
+        {
+            _smileyBorderPacks[id] = package;
+        }
+        public static void SetPackage(SmileyEyes id, PackAttribute package)
+        {
+            _smileyEyesPacks[id] = package;
+        }
+
+        public static void SetPackage(SmileyMouth id, PackAttribute package)
+        {
+            _smileyMouthPacks[id] = package;
+        }
+
+        public static void SetPackage(SmileyAddon id, PackAttribute package)
+        {
+            _smileyAddonPacks[id] = package;
+        }
+        public static void SetPackage(SmileyAbove id, PackAttribute package)
+        {
+            _smileyAbovePacks[id] = package;
+        }
+
+        public static void SetPackage(SmileyBelow id, PackAttribute package)
+        {
+            _smileyBelowPacks[id] = package;
+        }
+
+        public static void SetPackage(SmileyWings id, PackAttribute package)
+        {
+            _smileyWingsPacks[id] = package;
+        }
         public static void SetPackage(Foreground.Id id, PackAttribute package)
         {
             SetPackageInternal((int)id, package);

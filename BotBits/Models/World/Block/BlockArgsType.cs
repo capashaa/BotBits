@@ -7,6 +7,7 @@
         String,
         Portal,
         Label,
-        Sign
+        Sign,
+        NPC
     }
 }

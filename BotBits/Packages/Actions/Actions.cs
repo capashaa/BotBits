@@ -144,11 +144,10 @@ namespace BotBits
             new BadgeChangeSendMessage(badge)
                 .SendIn(this.BotBits);
         }
-
-        public void ChangeSmiley(Smiley smiley)
+        public void ChangeSmiley(SmileyShape shape, SmileyColour colour, SmileyBorder border, SmileyEyes eyes, SmileyMouth mouth, SmileyAddon addon, SmileyAbove above, SmileyBelow below, SmileyWings wings)
         {
-            if (this.HasSmiley(smiley)) // Server kicks people if they do not own a smiley
-                new SmileySendMessage(smiley)
+            if (this.HasSmileyShape(shape) && this.HasSmileyColour(colour) && this.HasSmileyBorder(border) && this.HasSmileyEyes(eyes) && this.HasSmileyMouth(mouth) && this.HasSmileyAddon(addon) && this.HasSmileyAbove(above) && this.HasSmileyBelow(below) && this.HasSmileyWings(wings)) // Server kicks people if they do not own a smiley
+                new SmileySendMessage(shape, colour, border, eyes, mouth, addon, above, below,wings)
                     .SendIn(this.BotBits);
         }
 
@@ -159,9 +158,49 @@ namespace BotBits
                     .SendIn(this.BotBits);
         }
 
-        private bool HasSmiley(Smiley smiley)
+        private bool HasSmileyShape(SmileyShape smiley)
         {
-            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmiley(smiley);
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyShape(smiley);
+        }
+
+        private bool HasSmileyColour(SmileyColour smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyColour(smiley);
+        }
+
+        private bool HasSmileyBorder(SmileyBorder smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyBorder(smiley);
+        }
+
+        private bool HasSmileyEyes(SmileyEyes smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyEyes(smiley);
+        }
+
+        private bool HasSmileyMouth(SmileyMouth smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyMouth(smiley);
+        }
+
+        private bool HasSmileyAddon(SmileyAddon smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyAddon(smiley);
+        }
+
+        private bool HasSmileyAbove(SmileyAbove smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyAbove(smiley);
+        }
+
+        private bool HasSmileyBelow(SmileyBelow smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyBelow(smiley);
+        }
+
+        private bool HasSmileyWings(SmileyWings smiley)
+        {
+            return ConnectionManager.Of(this.BotBits).PlayerData.HasSmileyWings(smiley);
         }
 
         private bool HasAura(AuraShape auraShape, AuraColor auraColor)

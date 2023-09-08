@@ -19,42 +19,97 @@ namespace BotBits.Events
         {
             this.Username = message.GetString(1);
             this.ConnectUserId = message.GetString(2);
-            this.Smiley = (Smiley)message.GetInteger(3);
-            this.X = message.GetDouble(4);
-            this.Y = message.GetDouble(5);
-            this.GodMode = message.GetBoolean(6);
-            this.StaffMode = message.GetBoolean(7);
-            this.HasChat = message.GetBoolean(8);
-            this.Coins = message.GetInteger(9);
-            this.BlueCoins = message.GetInteger(10);
-            this.Deaths = message.GetInteger(11);
-            this.Friend = message.GetBoolean(12);
-            this.GoldMember = message.GetBoolean(13);
-            this.GoldBorder = message.GetBoolean(14);
-            this.InModeratorMode = message.GetBoolean(15);
-            this.Team = (Team)message.GetInt(16);
-            this.AuraShape = (AuraShape)message.GetInt(17);
-            this.AuraColor = (AuraColor)message.GetInt(18);
-            this.ChatColor = message.GetUInt(19);
-            this.Badge = message.GetBadge(20);
-            this.CrewMember = message.GetBoolean(21);
-            this.PurpleSwitches = VarintHelper.ToInt32Array(message.GetByteArray(22));
-            this.StaffAuraOffset = message.GetInt(23);
-            this.HasEditRights = message.GetBoolean(24);
-            this.HasGodRights = message.GetBoolean(25);
+            this.SmileyShape = (SmileyShape)message.GetInt(3);
+            this.SmileyColour = (SmileyColour)message.GetInt(4);
+            this.SmileyBorder = message.GetInt(5);
+            this.SmileyEyes = (SmileyEyes)message.GetInt(6);
+            this.SmileyMouth = (SmileyMouth)message.GetInt(7);
+            this.SmileyAddon = (SmileyAddon)message.GetInt(8);
+            this.SmileyAbove = (SmileyAbove)message.GetInt(9);
+            this.SmileyBelow = (SmileyBelow)message.GetInt(10);
+            this.SmileyWings = (SmileyWings)message.GetInt(11);
+            this.X = message.GetDouble(12);
+            this.Y = message.GetDouble(13);
+            this.GodMode = message.GetBoolean(14);
+            this.StaffMode = message.GetBoolean(15);
+            this.HasChat = message.GetBoolean(16);
+            this.Coins = message.GetInteger(17);
+            this.BlueCoins = message.GetInteger(18);
+            this.Deaths = message.GetInteger(19);
+            this.Friend = message.GetBoolean(20);
+            this.GoldMember = message.GetBoolean(21);
+           // this.GoldBorder = message.GetBoolean(22);
+            this.Team = (Team)message.GetInt(22);
+            this.AuraShape = (AuraShape)message.GetInt(23);
+            this.AuraColor = (AuraColor)message.GetInt(24);
+            this.ChatColor = message.GetUInt(25);
+            this.Badge = message.GetBadge(26);
+            this.CrewMember = message.GetBoolean(27);
+            this.PurpleSwitches = VarintHelper.ToInt32Array(message.GetByteArray(28));
+            this.HasEditRights = message.GetBoolean(29);
+            this.HasGodRights = message.GetBoolean(30);
         }
         
         public bool GoldBorder { get; set; }
 
-        public int StaffAuraOffset { get; set; }
-
-        public bool InModeratorMode { get; set; }
         public bool HasEditRights { get; set; }
 
         public bool HasGodRights { get; set; }
 
         public AuraColor AuraColor { get; set; }
 
+        /// <summary>
+        ///     Gets or sets the smiley shape
+        /// </summary>
+        /// <value>The Smiley Shape</value>
+        public SmileyShape SmileyShape { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley colour
+        /// </summary>
+        /// <value>The Smiley Colour</value>
+        public SmileyColour SmileyColour { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley border
+        /// </summary>
+        /// <value>The Smiley Border</value>
+        public int SmileyBorder { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley eyes
+        /// </summary>
+        /// <value>The Smiley Eyes</value>
+        public SmileyEyes SmileyEyes { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley mouth
+        /// </summary>
+        /// <value>The Smiley Mouth</value>
+        public SmileyMouth SmileyMouth { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley addon
+        /// </summary>
+        /// <value>The Smiley Addon</value>
+        public SmileyAddon SmileyAddon { get; set; }
+        /// <summary>
+        ///     Gets or sets the smiley above
+        /// </summary>
+        /// <value>The Smiley Above look</value>
+        public SmileyAbove SmileyAbove { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley below
+        /// </summary>
+        /// <value>The Smiley Below look</value>
+        public SmileyBelow SmileyBelow { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley wings
+        /// </summary>
+        /// <value>The Smiley Wings</value>
+        public SmileyWings SmileyWings { get; set; }
         /// <summary>
         ///     Gets or sets the amount of deaths.
         /// </summary>
@@ -121,11 +176,6 @@ namespace BotBits.Events
         /// <value>The blue coins.</value>
         public int BlueCoins { get; set; }
 
-        /// <summary>
-        ///     Gets or sets the smiley the player has.
-        /// </summary>
-        /// <value>The face.</value>
-        public Smiley Smiley { get; set; }
 
         /// <summary>
         ///     Gets or sets whether this player may chat using the free-form chat box.

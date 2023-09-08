@@ -133,6 +133,73 @@ namespace BotBits
                 Gate = (Id)1028;
         }
 
+        public static class NPC
+        {
+            [Pack(ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Smile = (Id)1550;
+            [Pack("npcsad", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Sad = (Id)1551;
+            [Pack("npcold", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Old = (Id)1552;
+            [Pack("npcangry", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Angry = (Id)1553;
+            [Pack("npcslime", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Slime = (Id)1554;
+            [Pack("npcrobot", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Robot = (Id)1555;
+            [Pack("npcknight", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Knight = (Id)1556;
+            [Pack("npcmeh", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Meh = (Id)1557;
+            [Pack("npccow", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Cow = (Id)1558;
+            [Pack("npcfrog", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Frog = (Id)1559;
+            [Pack("npcbruce", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Bruce = (Id)1570;
+            [Pack("npcstarfish", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Starfish = (Id)1569;
+            [Pack("npcdt", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Computer = (Id)1571;
+            [Pack("npcskeleton", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Skeleton = (Id)1572;
+            [Pack("npczombie", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Zombie = (Id)1573;
+            [Pack("npcghost", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Ghost = (Id)1574;
+            [Pack("npcastronaut", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Astronaut = (Id)1575;
+            [Pack("npcsanta", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Santa = (Id)1576;
+            [Pack("npcsnowman", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Snowman = (Id)1577;
+            [Pack("npcwalrus", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Walrus = (Id)1578;
+            [Pack("npccrab", ForegroundType = ForegroundType.NPC)]
+            public const Id
+                Crab = (Id)1579;
+        }
+
         public static class Death
         {
             [Pack("brickdeathdoor", ForegroundType = ForegroundType.Goal)]

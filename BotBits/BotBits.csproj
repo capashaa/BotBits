@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net471</TargetFramework>
     <Version>262.0.3</Version>
     <PackageId>BotBits</PackageId>
     <Description>An Everybody Edits framework designed for performance and reliability.</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="PlayerIOClient-Signed" Version="3.5.2" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="7.0.0" />
   </ItemGroup>
 </Project>

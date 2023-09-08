@@ -58,6 +58,11 @@ namespace BotBits
         /// <summary>
         ///     A world portal block
         /// </summary>
-        WorldPortal
+        WorldPortal,
+
+        /// <summary>
+        ///     A world NPC block
+        /// </summary>
+        NPC
     }
 }

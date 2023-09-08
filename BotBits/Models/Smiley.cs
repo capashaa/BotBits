@@ -1,505 +1,365 @@
 namespace BotBits
 {
-    public enum Smiley
+
+    public enum SmileyShape
     {
-        Smile = 0,
-        Grin = 1,
-        Tongue = 2,
-        Happy = 3,
-        Annoyed = 4,
-        Sad = 5,
+        Regular = 0,
+
+        Square = 1,
 
         [Pack("pro")]
-        Crying = 6,
+        Devil = 2,
 
-        [Pack("pro")]
-        Wink = 7,
+        [Pack("smileyshapeegg")]
+        Egg = 3,
 
-        [Pack("pro")]
-        Frustrated = 8,
+        [Pack("smileyshaperaindrop")]
+        Raindrop = 4,
 
-        [Pack("pro")]
-        Shades = 9,
+        [Pack("smileyshapeghost")]
+        Ghost = 5,
 
-        [Pack("pro")]
-        Devil = 10,
+        [Pack("smileyshapeskull")]
+        Skull = 6,
+    }
 
-        [Pack("pro")]
-        Inquisitive = 11,
-
-        [Pack("smileyninja")]
-        Ninja = 12,
-
-        [Pack("smileysanta")]
-        Santa = 13,
-
-        [Pack("smileyworker")]
-        Worker = 14,
-
-        [Pack("smileybigspender")]
-        BigSpender = 15,
-
-        [Pack("smileysuper")]
-        Superman = 16,
-
-        [Pack("smileysupprice")]
-        Surprise = 17,
-
-        Indifferent = 18,
-
-        [Pack("smileygirl")]
-        Girl = 19,
-
-        [Pack("mixednewyear2010")]
-        NewYear2010 = 20,
-
-        [Pack("smileycoy")]
-        Coy = 21,
-
-        [Pack("smileywizard")]
-        Wizard = 22,
-
-        [Pack("smileyfanboy")]
-        FanBoy = 23,
-
-        [Pack("smileyterminator")]
-        Terminator = 24,
-
-        [Pack("smileyxd")]
-        ExtraGrin = 25,
-
-        [Pack("smileybully")]
-        Bully = 26,
-
-        [Pack("smileycommando")]
-        Commando = 27,
-
-        [Pack("smileyvalentines2011")]
-        Kissing = 28,
-
-        [Pack("smileybird")]
-        Bird = 29,
-
-        [Pack("smileybunni")]
-        Bunny = 30,
-
-        [Pack("-")]
-        Diamond = 31,
-
-        [Pack("smileywizard2")]
-        FireWizard = 32,
-
-        [Pack("smileyxdp")]
-        ExtraTongue = 33,
-
-        [Pack("smileypostman")]
-        Postman = 34,
-
-        [Pack("smileytemplar")]
-        Templar = 35,
-
-        [Pack("smileyangel")]
-        Angel = 36,
-
-        [Pack("smileynurse")]
-        Nurse = 37,
-
-        [Pack("smileyhw2011vampire")]
-        Vampire = 38,
-
-        [Pack("smileyhw2011ghost")]
-        Ghost = 39,
-
-        [Pack("smileyhw2011frankenstein")]
-        Frankenstein = 40,
-
-        [Pack("smileywitch")]
-        Witch = 41,
-
-        [Pack("smileytg2011indian")]
-        Indian = 42,
-
-        [Pack("smileytg2011pilgrim")]
-        Pilgrim = 43,
-
-        [Pack("smileypumpkin1")]
-        Pumpkin = 44,
-
-        [Pack("smileypumpkin2")]
-        LitPumpkin = 45,
-
-        [Pack("smileyxmassnowman")]
-        Snowman = 46,
-
-        [Pack("smileyxmasreindeer")]
-        Reindeer = 47,
-
-        [Pack("smileyxmasgrinch")]
-        Grinch = 48,
-
-        [Pack("bricknode")]
-        Maestro = 49,
-
-        [Pack("brickdrums")]
-        DJ = 50,
-
-        [Pack("smileysigh")]
-        Sigh = 51,
-
-        [Pack("smileyrobber")]
-        Robber = 52,
-
-        [Pack("smileypolice")]
-        Police = 53,
-
-        [Pack("smileypurpleghost")]
-        PurpleGhost = 54,
-
-        [Pack("smileypirate")]
-        Pirate = 55,
-
-        [Pack("smileyviking")]
-        Viking = 56,
-
-        [Pack("smileykarate")]
-        Karate = 57,
-
-        [Pack("smileycowboy")]
-        Cowboy = 58,
-
-        [Pack("smileydiver")]
-        Diver = 59,
-
-        [Pack("smileytanned")]
-        Tanned = 60,
-
-        [Pack("smileypropeller")]
-        Propeller = 61,
-
-        [Pack("smileyhardhat")]
-        HardHat = 62,
-
-        [Pack("smileygasmask")]
-        GasMask = 63,
-
-        [Pack("smileyrobot")]
-        Robot = 64,
-
-        [Pack("smileypeasant")]
-        Peasant = 65,
-
-        [Pack("smileysoldier")]
-        Soldier = 66,
-
-        [Pack("smileyblacksmith")]
-        Blacksmith = 67,
-
-        [Pack("smileylaughing")]
-        Lol = 68,
-
-        [Pack("smileylaika")]
-        Dog = 69,
-
-        [Pack("smileyalien")]
-        Alien = 70,
-
-        [Pack("smileyastronaut")]
-        Astronaut = 71,
-
-        [Pack("-")]
-        BirthdayHappy = 72,
-
-        [Pack("-")]
-        BirthdaySmile = 73,
-
-        [Pack("-")]
-        BirthdayGrin = 74,
-
-        [Pack("-")]
-        BirthdayTongue = 75,
-
-        [Pack("smileycannon")]
-        Cannonball = 76,
-
-        [Pack("smileymonster")]
-        Monster = 77,
-
-        [Pack("smileyskeleton")]
-        Skeleton = 78,
-
-        [Pack("smileymadscientist")]
-        MadScientist = 79,
-
-        [Pack("smileyheadhunter")]
-        Headhunter = 80,
-
-        [Pack("smileysafari")]
-        Safari = 81,
-
-        [Pack("smileyarchaeologist")]
-        Archaeologist = 82,
-
-        [Pack("smileynewyear2012")]
-        NewYear2013 = 83,
-
-        [Pack("smileywinter")]
-        Winter = 84,
-
-        [Pack("smileyfiredeamon")]
-        FireDemon = 85,
-
-        [Pack("smileybishop")]
-        Bishop = 86,
-
-        [Pack("-")]
-        Zombie = 87,
-
-        [Pack("smileyzombieslayer")]
-        Bruce = 88,
-
-        [Pack("smileyunit")]
-        Unit = 89,
-
-        [Pack("smileyspartan")]
-        Spartan = 90,
-
-        [Pack("smileyhelen")]
-        Helen = 91,
-
-        [Pack("smileycow")]
-        MooMoo = 92,
-
-        [Pack("smileyscarecrow")]
-        Scarecrow = 93,
-
-        [Pack("smileydarkwizard")]
-        DarkWizard = 94,
-
-        [Pack("smileykungfumaster")]
-        KungFuMaster = 95,
-
-        [Pack("smileyfox")]
-        Fox = 96,
-
-        [Pack("smileynightvision")]
-        NightVision = 97,
-
-        [Pack("smileysummergirl")]
-        SummerGirl = 98,
-
-        [Pack("smileyfanboy2")]
-        FanBoy2 = 99,
-
-        [Pack("-")]
-        Hologram = 100,
-
-        [Pack("smileygingerbread")]
-        Gingerbread = 101,
-
-        [Pack("smileycaroler")]
-        Caroler = 102,
-
-        [Pack("smileyelf")]
-        Elf = 103,
-
-        [Pack("smileynutcracker")]
-        Nutcracker = 104,
-
-        [Pack("brickvalentines2015")]
-        Blushing = 105,
-
-        [Pack("smileyartist")]
-        Artist = 106,
-
-        [Pack("smileyprincess")]
-        Princess = 107,
-
-        [Pack("smileychef")]
-        Chef = 108,
-
-        [Pack("smileyclown")]
-        Clown = 109,
-
-        [Pack("smileyninjared")]
-        RedNinja = 110,
-
-        [Pack("smiley3dglasses")]
-        Glasses3D = 111,
-
-        [Pack("smileysunburned")]
-        Sunburned = 112,
-
-        [Pack("smileytourist")]
-        Tourist = 113,
-
-        [Pack("smileygraduate")]
-        Graduate = 114,
-
-        [Pack("smileysombrero")]
-        Sombrero = 115,
-
-        [Pack("smileycat")]
-        Cat = 116,
-
-        Scared = 117,
-
-        [Pack("smileyghoul")]
-        Ghoul = 118,
-
-        [Pack("smileymummy")]
-        Mummy = 119,
-
-        [Pack("smileybat")]
-        Bat = 120,
-
-        [Pack("smileyeyeball")]
-        Eyeball = 121,
-
-        [Pack("smileylightwizard")]
-        LightWizard = 122,
-
-        [Pack("smileyhooded")]
-        Hooded = 123,
-
-        [Pack("smileyearmuffs")]
-        Earmuffs = 124,
-
-        [Pack("smileypenguin")]
-        Penguin = 125,
+    public enum SmileyBorder
+    {
+        White = 0,
 
         [Pack("-", GoldMembershipItem = true)]
-        GoldSmiley = 126,
+        Gold = 1,
 
         [Pack("-", GoldMembershipItem = true)]
-        GoldNinja = 127,
+        GoldClassic = 3,
+
+        [Pack("smileyborderfishbowl")]
+        FishBowl = 2,
+
+        [Pack("smileyborderred")]
+        Red = 4,
+
+        [Pack("smileybordergreen")]
+        Green = 5,
+    }
+    public enum SmileyColour
+    {
+        Yellow = 0,
+        Red = 1,
+        [Pack("smileycolourrain")]
+        Rain = 2,
+
+        [Pack("smileycolourwhite")]
+        White = 3,
+
+        [Pack("smileycolourblack")]
+        Black = 4,
 
         [Pack("-", GoldMembershipItem = true)]
-        GoldRobot = 128,
+        Gold = 5,
 
-        [Pack("-", GoldMembershipItem = true)]
-        GoldTopHat = 129,
+        [Pack("smileycolourterminator")]
+        Terminator = 6,
 
-        [Pack("smileysick")]
-        Sick = 130,
+        [Pack("-")]
+        Zombie = 7,
 
-        [Pack("smileyunsure")]
-        Unsure = 131,
+        [Pack("smileycolourpurple")]
+        Purple = 8,
 
-        [Pack("smileygoofy")]
-        Goofy = 132,
+        [Pack("smileycolourmetal")]
+        Metal = 9,
 
-        [Pack("smileyraindrop")]
-        Raindrop = 133,
+        [Pack("smileycolourghost")]
+        Ghost = 10,
 
-        [Pack("smileybee")]
-        Bee = 134,
+        [Pack("smileycolourpenguin")]
+        Penguin = 11,
 
-        [Pack("smileybutterfly")]
-        Butterfly = 135,
+        [Pack("-")]
+        Diamond = 12,
 
-        [Pack("smileyseacaptain")]
-        SeaCaptain = 136,
+        [Pack("-")]
+        Hologram = 13,
 
-        [Pack("smileysodaclerk")]
-        SodaClerk = 137,
+        [Pack("smileycolourgreen")]
+        Green = 14,
+    }
 
-        [Pack("smileylifeguard")]
-        Lifeguard = 138,
+    public enum SmileyEyes
+    {
+        [Pack("smileyeyes3d")]
+        _3DGlasses = 0,
 
-        [Pack("smileyaviator")]
-        Aviator = 139,
 
-        [Pack("smileysleepy")]
-        Sleepy = 140,
+        Angry = 1,
 
-        [Pack("smileyseagull")]
-        Seagull = 141,
+        [Pack("smileyeyesconfused")]
+        Confused = 2,
 
-        [Pack("smileywerewolf")]
-        Werewolf = 142,
+        [Pack("pro")]
+        Crying = 3,
 
-        [Pack("smileyswampcreature")]
-        SwampCreature = 143,
+        [Pack("smileyeyescyclops")]
+        Cyclops = 4,
 
-        [Pack("smileyfairy")]
-        Fairy = 144,
+        [Pack("smileyeyesgoofy")]
+        Goofy = 5,
 
-        [Pack("smileyfirefighter")]
-        Firefighter = 145,
 
-        [Pack("smileyspy")]
-        Spy = 146,
+        Happy = 6,
 
-        [Pack("smileydevilskull")]
-        DevilSkull = 147,
+        [Pack("smileyeyesmonocle")]
+        Monocle = 7,
 
-        [Pack("smileyclockwork")]
-        ClockworkRobot = 148,
+        [Pack("smileyeyesnerd")]
+        NerdGlasses = 8,
 
-        [Pack("smileyteddybear")]
-        TeddyBear = 149,
 
-        [Pack("smileychristmassoldier")]
-        ChristmasSoldier = 150,
+        Neutral = 9,
 
-        [Pack("smileyscrooge")]
-        Scrooge = 151,
-        
-        [Pack("smileyboy")]
-        Boy = 152,
+        [Pack("smileyeyesred")]
+        Red = 10,
 
-        [Pack("smileypigtails")]
-        Pigtails = 153,
+        [Pack("smileyeyesrobber")]
+        RobberMask = 11,
 
-        [Pack("smileydoctor")]
-        Doctor = 154,
 
-        [Pack("smileyturban")]
-        Turban = 155,
+        Sad = 12,
 
-        [Pack("smileyhazmatsuit")]
-        HazmatSuit = 156,
+        [Pack("pro")]
+        Sunglasses = 13,
 
-        [Pack("smileyleprechaun")]
-        Leprechaun = 157,
+        [Pack("smileyeyesterminator")]
+        Terminator = 14,
 
-        [Pack("smileyangry")]
-        Angry = 158,
 
-        [Pack("smileysmirk")]
-        Smirk = 159,
+        TightlyClosed = 15,
 
-        [Pack("smileysweat")]
-        Sweat = 160,
+        [Pack("smileyeyestired")]
+        Tired = 16,
+
+        Wink = 17,
+        Coy = 18,
+        LOL = 19,
+    }
+    public enum SmileyMouth
+    {
+        BullyFlat = 0,
+
+        [Pack("smileymouthbeak")]
+        Beak = 1,
+
+        [Pack("smileymouthbeak2")]
+        Beak2 = 2,
+
+        [Pack("smileymouthbunny")]
+        BunnyTeeth = 3,
+
+        [Pack("smileymouthcat")]
+        Cat = 4,
+
+        [Pack("pro")]
+        Cool = 5,
+
+
+        Flat = 6,
+        Frown = 7,
+
+        [Pack("smileymouthgoofy")]
+        Goofy = 8,
+
+
+        Grin = 9,
+        Indifferent = 10,
+
+        [Pack("smileymouthkiss")]
+        KissyLips = 11,
+
+        [Pack("smileymouthmexican")]
+        MexicanMoustache = 12,
+
+
+        Ooh = 13,
+
+        [Pack("smileymouthpirate")]
+        PirateTeeth = 14,
+
+        [Pack("smileymouthrobot")]
+        RobotMouth = 15,
+
+        [Pack("smileymouthscared")]
+        Scared = 16,
+
+        [Pack("smileymouthsick")]
+        Sick = 17,
+
+        Smile = 18,
+
+        [Pack("smileymouthmask")]
+        FaceMask = 19,
+
+
+        Tongue = 20,
+
+        [Pack("smileymouthunsure")]
+        Unsure = 21,
+
+        [Pack("smileymouthunsurer")]
+        Unsurer = 22,
+
+        [Pack("smileymouthuwu")]
+        UwU = 23,
+
+        [Pack("smileymouthwizard")]
+        WizardBuckTeeth = 24,
+
+        Coy = 25,
+        LOL = 26,
+    }
+    public enum SmileyAddon
+    {
+        Nothing = 0,
+
+        [Pack("smileyaddonblood")]
+        Blood = 1,
+
+        Blush = 2,
+        [Pack("smileyaddonheavyblush")]
+        HeavyBlush = 3,
+
+        [Pack("smileyaddonscar")]
+        Scar = 4,
+
+        [Pack("smileyaddonsweat")]
+        Sweat = 5,
+
+        [Pack("pro")]
+        Tear = 6,
+
+        [Pack("smileyaddonwhiskers")]
+        Whiskers = 7,
+    }
+    public enum SmileyAbove
+    {
+        Nothing = 0,
+
+        [Pack("smileyabovebunny")]
+        BunnyEars = 1,
 
         [Pack("brickguitar")]
-        CountrySinger = 161,
-        
-        [Pack("smileythor")]
-        Thor = 162,
-        
-        CowGirl = 163,
-        
-        [Pack("smileyraccoon")]
-        Raccoon = 164,
-        
-        [Pack("smileylion")]
-        Lion = 165,
-        
-        [Pack("smileylaiika")]
-        Laika = 166,
-        
-        [Pack("smileyfishbowl")]
-        Fishbowl = 167,
-        
-        [Pack("smileyslime")]
-        Slime = 168,
-        
-        [Pack("smileydesigner")]
-        Designer = 169,
-        
-        [Pack("smileyfrozen")]
-        Frozen = 170
-        
+        CountrySingerHat = 2,
+
+        [Pack("smileyabovedevil")]
+        DevilHorns = 3,
+
+        [Pack("smileyabovedoctor")]
+        Doctor = 4,
+
+        [Pack("smileyabovegargoyle")]
+        GargoyleHorns = 5,
+
+
+        Halo = 6,
+
+        [Pack("smileyabovenewyear")]
+        NewYear2010 = 7,
+
+        [Pack("smileyabovenurse")]
+        NurseHat = 8,
+
+        [Pack("-")]
+        PartyHat1 = 9,
+
+        [Pack("-")]
+        PartyHat2 = 10,
+
+        [Pack("-")]
+        PartyHat3 = 11,
+
+        [Pack("-")]
+        PartyHat4 = 12,
+
+        Pigtails = 13,
+
+        [Pack("smileyabovepirate")]
+        PirateHat = 14,
+
+        [Pack("smileyabovepostman")]
+        PostmanHat = 15,
+
+        [Pack("smileyabovesanta")]
+        SantaHat = 16,
+
+        [Pack("smileyabovetophat")]
+        Tophat = 17,
+
+        [Pack("smileyaboveturban")]
+        Turban = 18,
+
+        [Pack("smileyabovetoykey")]
+        WindupToyKey = 19,
+
+        [Pack("brickdrums")]
+        DjHeadPhones = 20,
+
+        [Pack("bricknode")]
+        MusicianHair = 21,
+
+        [Pack("smileyabovegraduate")]
+        GraduateHat = 22,
+
+        [Pack("smileyabovewizard")]
+        Wizard = 23,
+
+        [Pack("smileyabovefirewizard")]
+        FireWizard = 24,
+
+        [Pack("smileyaboveartist")]
+        Artist = 25,
+
+        [Pack("-", GoldMembershipItem = true)]
+        GoldTopHat = 26,
     }
+
+    public enum SmileyWings
+    {
+        Nothing = 0,
+        Angel = 1,
+        Bat = 2,
+        Butterfly = 3,
+        Gargoyle = 4,
+        Seagull = 5,
+        Superman = 6,
+    }
+
+    public enum SmileyBelow
+    {
+        Nothing = 0,
+
+        [Pack("smileybelowbeard")]
+        Beard = 1,
+
+        [Pack("smileybelowbowtie1")]
+        BowTie1 = 2,
+
+        [Pack("smileybelowbowtie2")]
+        BowTie2 = 3,
+
+        [Pack("smileybelowbowtie3")]
+        BowTie3 = 4,
+
+        [Pack("smileybelowscarf")]
+        Scarf = 5,
+
+        [Pack("smileybelowwizard")]
+        WizardBeard = 6,
+
+        [Pack("smileysuper")]
+        Superman = 7,
+
+        [Pack("bricknode")]
+        MusicianBowTie =8,
+    }
+    
 }

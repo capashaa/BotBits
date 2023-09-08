@@ -55,6 +55,13 @@ namespace BotBits
             this.Id = id;
         }
 
+        public ForegroundBlock(Foreground.Id id, string name, string message1, string message2, string message3)
+            : this(id, BlockArgsType.NPC)
+        {
+            this._args = new NPCArgs(name, message1, message2,message3);
+            this.Id = id;
+        }
+
         public ForegroundBlock(Foreground.Id id, bool enabled)
             : this(id, enabled ? 1 : 0)
         {
@@ -147,6 +154,71 @@ namespace BotBits
             }
         }
 
+
+        /// <summary>
+        ///     Gets the NPC name. (Only on NPC blocks)
+        /// </summary>
+        /// <value>
+        ///     The name of npc.
+        /// </value>
+        /// <exception cref="System.InvalidOperationException">This property can only be accessed on npc blocks.</exception>
+        public string Name
+        {
+            get
+            {
+                if (this.Type != ForegroundType.NPC) throw new InvalidOperationException("This property can only be accessed on NPC blocks."); 
+                else return this.GetNPCArgs()?.Name;
+                
+                
+            }
+        }
+        /// <summary>
+        ///     Gets the NPC text message 1. (Only on NPC blocks)
+        /// </summary>
+        /// <value>
+        ///     The text 1 for npc.
+        /// </value>
+        /// <exception cref="System.InvalidOperationException">This property can only be accessed on npc blocks.</exception>
+        public string Message1
+        {
+            get
+            {
+                if ((int)this.Id >= 1550 && (int)this.Id <= 1559 || (int)this.Id >= 1569 && (int)this.Id <= 1579) return this.GetNPCArgs()?.Message1;
+                else throw new InvalidOperationException("This property can only be accessed on NPC blocks.");
+            }
+        }
+
+        /// <summary>
+        ///     Gets the NPC text message 2. (Only on NPC blocks)
+        /// </summary>
+        /// <value>
+        ///     The text 2 for npc.
+        /// </value>
+        /// <exception cref="System.InvalidOperationException">This property can only be accessed on npc blocks.</exception>
+        public string Message2
+        {
+            get
+            {
+                if ((int)this.Id >= 1550 && (int)this.Id <= 1559 || (int)this.Id >= 1569 && (int)this.Id <= 1579) return this.GetNPCArgs()?.Message2;
+                else throw new InvalidOperationException("This property can only be accessed on NPC blocks.");
+            }
+        }
+
+        /// <summary>
+        ///     Gets the NPC text message 3. (Only on NPC blocks)
+        /// </summary>
+        /// <value>
+        ///     The text 3 for npc.
+        /// </value>
+        /// <exception cref="System.InvalidOperationException">This property can only be accessed on npc blocks.</exception>
+        public string Message3
+        {
+            get
+            {
+                if ((int)this.Id >= 1550 && (int)this.Id <= 1559 || (int)this.Id >= 1569 && (int)this.Id <= 1579) return this.GetNPCArgs()?.Message3;
+                else throw new InvalidOperationException("This property can only be accessed on NPC blocks.");
+            }
+        }
         /// <summary>
         ///     Gets the width of this block.
         /// </summary>
@@ -267,7 +339,10 @@ namespace BotBits
         {
             return this._args as PortalArgs;
         }
-
+        private NPCArgs GetNPCArgs()
+        {
+            return this._args as NPCArgs;
+        }
         private LabelArgs GetLabelArgs()
         {
             return this._args as LabelArgs;
@@ -278,8 +353,63 @@ namespace BotBits
             return this._args as SignArgs;
         }
 
+        private class NPCArgs : IEquatable<NPCArgs>
+        {
+            public NPCArgs(string name, string message1, string message2, string message3)
+            {
+                this.Name = name;
+                this.Message1 = message1;
+                this.Message2 = message2;
+                this.Message3 = message3;
+            }
+            public string Name { get; }
+            public string Message1 { get; }
+            public string Message2 { get; }
+            public string Message3 { get; }
+
+            public bool Equals(NPCArgs other)
+            {
+                if (ReferenceEquals(null, other)) return false;
+                if (ReferenceEquals(this, other)) return true;
+                return string.Equals(this.Name, other.Name) && 
+                    string.Equals(this.Message1, other.Message1) &&
+                    string.Equals(this.Message2, other.Message2) &&
+                    string.Equals(this.Message3, other.Message3);
+            }
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(null, obj)) return false;
+                if (ReferenceEquals(this, obj)) return true;
+                if (obj.GetType() != this.GetType()) return false;
+                return Equals((NPCArgs)obj);
+            }
+
+            public override int GetHashCode()
+            {
+                unchecked
+                {
+                    var hashCode = (this.Name != null ? this.Name.GetHashCode() : 0);
+                    hashCode = (hashCode * 397) ^ (this.Message1 != null ? this.Message1.GetHashCode() : 0);
+                    hashCode = (hashCode * 397) ^ (this.Message2 != null ? this.Message2.GetHashCode() : 0);
+                    hashCode = (hashCode * 397) ^ (this.Message3 != null ? this.Message3.GetHashCode() : 0);
+                    return hashCode;
+                }
+            }
+
+            public static bool operator ==(NPCArgs left, NPCArgs right)
+            {
+                return Equals(left, right);
+            }
+
+            public static bool operator !=(NPCArgs left, NPCArgs right)
+            {
+                return !Equals(left, right);
+            }
+
+        }
         private class PortalArgs : IEquatable<PortalArgs>
         {
+        
             public PortalArgs(uint portalId, uint portalTarget, Morph.Id portalRotation)
             {
                 this.PortalId = portalId;
@@ -441,6 +571,8 @@ namespace BotBits
                     return new object[] { this.Text, (uint)this.Morph };
                 case BlockArgsType.Label:
                     return new object[] { this.Text, this.TextColor, this.WrapWidth };
+                case BlockArgsType.NPC:
+                    return new object[] { this.Name, this.Message1, this.Message2, this.Message3 };
                 default:
                     throw new NotSupportedException("Unsupported block args type!");
             }

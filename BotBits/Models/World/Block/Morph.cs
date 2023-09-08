@@ -515,6 +515,12 @@
                 Gold = (Id)3;
         }
 
+        public static class WorldPortal
+        {
+            public const Id
+                Id = 0;
+        }
+
         public static class Summer2016IceCream
         {
             public const Id

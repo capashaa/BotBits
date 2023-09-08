@@ -1,4 +1,5 @@
 using PlayerIOClient;
+using System;
 
 namespace BotBits.Events
 {
@@ -23,44 +24,54 @@ namespace BotBits.Events
             this.Favorites = message.GetInt(3);
             this.Likes = message.GetInt(4);
             // 5: UserId
-            this.Smiley = (Smiley)message.GetInt(6);
-            this.AuraShape = (AuraShape)message.GetInt(7);
-            this.AuraColor = (AuraColor)message.GetInt(8);
-            this.GoldBorder = message.GetBoolean(9);
-            this.SpawnX = message.GetDouble(10);
-            this.SpawnY = message.GetDouble(11);
-            this.ChatColor = message.GetUInt(12);
-            this.Username = message.GetString(13);
-            this.CanEdit = message.GetBoolean(14);
-            this.IsOwner = message.GetBoolean(15);
-            this.Favorited = message.GetBoolean(16);
-            this.Liked = message.GetBoolean(17);
-            this.WorldWidth = message.GetInt(18);
-            this.WorldHeight = message.GetInt(19);
-            this.GravityMultiplier = message.GetDouble(20);
-            this.BackgroundColor = message.GetUInt(21);
-            this.Visible = message.GetBoolean(22);
-            this.HideLobby = message.GetBoolean(23);
-            this.AllowSpectating = message.GetBoolean(24);
-            this.RoomDescription = message.GetString(25);
-            this.CurseLimit = message.GetInt(26);
-            this.ZombieLimit = message.GetInt(27);
-            this.Campaign = message.GetBoolean(28);
-            this.CrewId = message.GetString(29);
-            this.CrewName = message.GetString(30);
-            this.CanChangeWorldOptions = message.GetBoolean(31);
-            this.WorldStatus = (WorldStatus)message.GetInt(32);
-            this.Badge = message.GetBadge(33);
-            this.CrewMember = message.GetBoolean(34);
-            this.MinimapEnabled = message.GetBoolean(35);
-            this.LobbyPreviewEnabled = message.GetBoolean(36);
-            this.OrangeSwitches = VarintHelper.ToInt32Array(message.GetByteArray(37));
-            this.FriendsOnly = message.GetBoolean(38);
-            this.IsArtContest = message.GetBoolean(39);
+            this.SmileyShape = (SmileyShape)message.GetInt(6);
+            this.SmileyColour = (SmileyColour)message.GetInt(7);
+            this.SmileyBorder = message.GetInt(8);
+            this.SmileyEyes = (SmileyEyes)message.GetInt(9);
+            this.SmileyMouth = (SmileyMouth)message.GetInt(10);
+            this.SmileyAddon = (SmileyAddon)message.GetInt(11);
+            this.SmileyAbove = (SmileyAbove)message.GetInt(12);
+            this.SmileyBelow = (SmileyBelow)message.GetInt(13);
+            this.SmileyWings = (SmileyWings)message.GetInt(14);
+            this.AuraShape = (AuraShape)message.GetInt(15);
+            this.AuraColor = (AuraColor)message.GetInt(16);
+            //this.GoldBorder = message.GetBoolean(17);
+            this.SpawnX = message.GetDouble(17);
+            this.SpawnY = message.GetDouble(18);
+            this.ChatColor = message.GetUInt(19);
+            this.Username = message.GetString(20);
+            this.CanEdit = message.GetBoolean(21);
+            this.IsOwner = message.GetBoolean(22);
+            this.Favorited = message.GetBoolean(23);
+            this.Liked = message.GetBoolean(24);
+            this.WorldWidth = message.GetInt(25);
+            this.WorldHeight = message.GetInt(26);
+            this.GravityMultiplier = message.GetDouble(27);
+            this.BackgroundColor = message.GetUInt(28);
+            this.Visible = message.GetBoolean(29);
+            this.HideLobby = message.GetBoolean(30);
+            this.AllowSpectating = message.GetBoolean(31);
+            this.RoomDescription = message.GetString(32);
+            this.CurseLimit = message.GetInt(33);
+            this.ZombieLimit = message.GetInt(34);
+            this.Campaign = message.GetBoolean(35);
+            this.CrewId = message.GetString(36);
+            this.CrewName = message.GetString(37);
+            this.CanChangeWorldOptions = message.GetBoolean(38);
+            this.WorldStatus = (WorldStatus)message.GetInt(39);
+            this.Badge = message.GetBadge(40);
+            this.CrewMember = message.GetBoolean(41);
+            this.MinimapEnabled = message.GetBoolean(42);
+            this.LobbyPreviewEnabled = message.GetBoolean(43);
+            this.OrangeSwitches = VarintHelper.ToInt32Array(message.GetByteArray(44));
+            this.FriendsOnly = message.GetBoolean(45);
+            this.OwnerConnectUserId = message.GetString(46);
+            this.CanToggleGodMode = message.GetBoolean(47);
         }
 
         public bool FriendsOnly { get; set; }
-        public bool IsArtContest { get; set; }
+        public string OwnerConnectUserId { get; set; }
+        public bool CanToggleGodMode { get; }
         public bool GoldBorder { get; set; }
 
         public int[] OrangeSwitches { get; set; }
@@ -103,7 +114,58 @@ namespace BotBits.Events
 
         public AuraShape AuraShape { get; set; }
 
-        public Smiley Smiley { get; set; }
+        /// <summary>
+        ///     Gets or sets the smiley shape
+        /// </summary>
+        /// <value>The Smiley Shape</value>
+        public SmileyShape SmileyShape { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley colour
+        /// </summary>
+        /// <value>The Smiley Colour</value>
+        public SmileyColour SmileyColour { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley border
+        /// </summary>
+        /// <value>The Smiley Border</value>
+        public int SmileyBorder { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley eyes
+        /// </summary>
+        /// <value>The Smiley Eyes</value>
+        public SmileyEyes SmileyEyes { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley mouth
+        /// </summary>
+        /// <value>The Smiley Mouth</value>
+        public SmileyMouth SmileyMouth { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley addon
+        /// </summary>
+        /// <value>The Smiley Addon</value>
+        public SmileyAddon SmileyAddon { get; set; }
+        /// <summary>
+        ///     Gets or sets the smiley above
+        /// </summary>
+        /// <value>The Smiley Above look</value>
+        public SmileyAbove SmileyAbove { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley below
+        /// </summary>
+        /// <value>The Smiley Below look</value>
+        public SmileyBelow SmileyBelow { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the smiley wings
+        /// </summary>
+        /// <value>The Smiley Wings</value>
+        public SmileyWings SmileyWings { get; set; }
 
         /// <summary>
         ///     Gets or sets a value indicating whether this <see cref="InitEvent" /> is visible.

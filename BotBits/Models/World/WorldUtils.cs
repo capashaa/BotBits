@@ -156,7 +156,8 @@ namespace BotBits
 
                 case ForegroundType.Sign:
                     return BlockArgsType.Sign;
-
+                case ForegroundType.NPC:
+                    return BlockArgsType.NPC;
                 default:
                     throw new ArgumentException("Invalid BlockType.", nameof(type));
             }
@@ -215,7 +216,14 @@ namespace BotBits
                     var color = (Morph.Id)Convert.ToUInt32(args[1]);
                     return new ForegroundBlock(block, text, color);
                 }
-
+                case BlockArgsType.NPC:
+                    {
+                        var name = Convert.ToString(args[0]);
+                        var message1 = Convert.ToString(args[1]);
+                        var message2 = Convert.ToString(args[2]);
+                        var message3 = Convert.ToString(args[3]);
+                        return new ForegroundBlock(block, name, message1, message2, message3);
+                    }
                 default:
                     throw new ArgumentException("Invalid block.", nameof(block));
             }

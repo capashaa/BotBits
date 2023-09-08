@@ -11,7 +11,7 @@ namespace BotBits
     public class VersionLoginClient : ILoginClient
     {
         private readonly LoginClient _loginClient;
-        private const string EverybodyEdits = "Everybodyedits";
+        private const string EverybodyEdits = "Everybuildexists";
         private const string Beta = "Beta";
 
         internal VersionLoginClient(LoginClient loginClient, int version)

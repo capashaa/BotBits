@@ -76,7 +76,15 @@ namespace BotBits
             this.OwnPlayer.Connected = true;
             this.OwnPlayer.Username = e.Username;
             this.OwnPlayer.ConnectUserId = ConnectionManager.Of(this.BotBits).ConnectUserId;
-            this.OwnPlayer.Smiley = e.Smiley;
+            this.OwnPlayer.SmileyShape = e.SmileyShape;
+            this.OwnPlayer.SmileyColour = e.SmileyColour;
+            this.OwnPlayer.SmileyBorder = e.SmileyBorder;
+            this.OwnPlayer.SmileyEyes = e.SmileyEyes;
+            this.OwnPlayer.SmileyMouth = e.SmileyMouth;
+            this.OwnPlayer.SmileyAddon = e.SmileyAddon;
+            this.OwnPlayer.SmileyAbove = e.SmileyAbove;
+            this.OwnPlayer.SmileyBelow = e.SmileyBelow;
+            this.OwnPlayer.SmileyWings = e.SmileyWings;
             this.OwnPlayer.AuraShape = e.AuraShape;
             this.OwnPlayer.AuraColor = e.AuraColor;
             this.OwnPlayer.Badge = e.Badge;
@@ -94,7 +102,15 @@ namespace BotBits
             p.Connected = true;
             p.Username = e.Username;
             p.ConnectUserId = e.ConnectUserId;
-            p.Smiley = e.Smiley;
+            p.SmileyShape = e.SmileyShape;
+            p.SmileyColour = e.SmileyColour;
+            p.SmileyBorder = e.SmileyBorder;
+            p.SmileyEyes = e.SmileyEyes;
+            p.SmileyMouth = e.SmileyMouth;
+            p.SmileyAddon = e.SmileyAddon;
+            p.SmileyBelow = e.SmileyBelow;
+            p.SmileyAbove = e.SmileyAbove;
+            p.SmileyWings = e.SmileyWings;
             p.AuraShape = e.AuraShape;
             p.AuraColor = e.AuraColor;
             p.Badge = e.Badge;
@@ -189,7 +205,15 @@ namespace BotBits
         private void On(SmileyEvent e)
         {
             var p = e.Player;
-            p.Smiley = e.Smiley;
+            p.SmileyShape = e.SmileyShape;
+            p.SmileyColour = e.SmileyColour;
+            p.SmileyBorder = e.SmileyBorder;
+            p.SmileyAddon = e.SmileyAddon;
+            p.SmileyAbove = e.SmileyAbove;
+            p.SmileyBelow = e.SmileyBelow;
+            p.SmileyMouth = e.SmileyMouth;
+            p.SmileyEyes = e.SmileyEyes;
+            p.SmileyWings = e.SmileyWings;
         }
 
         [EventListener]
