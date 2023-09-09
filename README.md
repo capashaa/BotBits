@@ -1,11 +1,9 @@
-# BotBits  [![Version](https://img.shields.io/nuget/v/BotBits.svg?style=flat-square&label=version)](https://www.nuget.org/packages/BotBits/) [![Issues](https://img.shields.io/github/issues/Yonom/BotBits.svg?style=flat-square)](https://github.com/Yonom/BotBits/issues)
+# BotBits
 
 Focus on your ideas, forget PlayerIOClient.
 
 BotBits is the most popular bot library made specifically for Everybody Edits. Maintained by Yonom (Processor).
 
-## Installation
-Download from NuGet (https://www.nuget.org/packages/BotBits)
 
 ## Usage
 Step 1: Import BotBits' namespaces
@@ -56,7 +54,7 @@ Lots of things your player can do are in the `Actions` class:
 ```csharp
 Actions.Of(bot).GodMode(true);
 Actions.Of(bot).Move(10 * 16, 10 * 16); // Move to 10x10
-Actions.Of(bot).ChangeSmiley(Smiley.Sad);
+Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, SmileyBorder.White, SmileyEyes.Coy, SmileyMouth.Smile, SmileyAddon.Nothing, SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);
 ```
 
 You can chat and use chat commands with the `Chat` class:
@@ -81,7 +79,7 @@ static void On(JoinCompleteEvent e)
 {
     foreach (Player p in Players.Of(bot)) 
     {
-        Console.WriteLine(p.Username + " has smiley " + p.Smiley);
+        Console.WriteLine(p.Username + " has smiley " + p.SmileyShape);
     }
 }
 ```
@@ -183,7 +181,7 @@ Blocks.Of(bot).Place(x, y, Foregrounds.SciFi.BlueSlope, Morph.SciFiSlope.InSouth
 ```
 
 ## Examples
-Take a look at this [custom ban list](http://botbits.yonom.org/examples/bans), [snake bot](http://botbits.yonom.org/examples/snakebot) or a [speed run bot](https://gist.github.com/Yonom/75e5c83937ea8a167d9d).
+Take a look at this [custom ban list](https://pastebin.com/2F9jN3gA), [snake bot](https://pastebin.com/5c7xSY8N) or a [speed run bot](https://gist.github.com/Yonom/75e5c83937ea8a167d9d).
 
 ## Extensions
 Anyone can code extensions to make BotBits more awesome!
