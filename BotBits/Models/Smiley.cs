@@ -91,7 +91,6 @@ namespace BotBits
         [Pack("smileyeyes3d")]
         _3DGlasses = 0,
 
-
         Angry = 1,
 
         [Pack("smileyeyesconfused")]
@@ -106,7 +105,6 @@ namespace BotBits
         [Pack("smileyeyesgoofy")]
         Goofy = 5,
 
-
         Happy = 6,
 
         [Pack("smileyeyesmonocle")]
@@ -114,7 +112,6 @@ namespace BotBits
 
         [Pack("smileyeyesnerd")]
         NerdGlasses = 8,
-
 
         Neutral = 9,
 
@@ -124,7 +121,6 @@ namespace BotBits
         [Pack("smileyeyesrobber")]
         RobberMask = 11,
 
-
         Sad = 12,
 
         [Pack("pro")]
@@ -133,14 +129,15 @@ namespace BotBits
         [Pack("smileyeyesterminator")]
         Terminator = 14,
 
-
         TightlyClosed = 15,
 
         [Pack("smileyeyestired")]
         Tired = 16,
 
         Wink = 17,
+
         Coy = 18,
+
         LOL = 19,
     }
     public enum SmileyMouth
@@ -162,15 +159,15 @@ namespace BotBits
         [Pack("pro")]
         Cool = 5,
 
-
         Flat = 6,
+
         Frown = 7,
 
         [Pack("smileymouthgoofy")]
         Goofy = 8,
 
-
         Grin = 9,
+
         Indifferent = 10,
 
         [Pack("smileymouthkiss")]
@@ -178,7 +175,6 @@ namespace BotBits
 
         [Pack("smileymouthmexican")]
         MexicanMoustache = 12,
-
 
         Ooh = 13,
 
@@ -215,6 +211,7 @@ namespace BotBits
         WizardBuckTeeth = 24,
 
         Coy = 25,
+
         LOL = 26,
     }
     public enum SmileyAddon
@@ -258,7 +255,6 @@ namespace BotBits
 
         [Pack("smileyabovegargoyle")]
         GargoyleHorns = 5,
-
 
         Halo = 6,
 
@@ -325,12 +321,21 @@ namespace BotBits
     public enum SmileyWings
     {
         Nothing = 0,
+
         Angel = 1,
+
+        [Pack("smileywingsbat")]
         Bat = 2,
+
+        [Pack("smileywingsbutterfly")]
         Butterfly = 3,
+
+        [Pack("smileywingsgargoyle")]
         Gargoyle = 4,
+
+        [Pack("smileywingsseagull")]
         Seagull = 5,
-        Superman = 6,
+
     }
 
     public enum SmileyBelow
