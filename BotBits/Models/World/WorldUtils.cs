@@ -112,7 +112,8 @@ namespace BotBits
 
                 case ForegroundType.WorldPortal:
                     return new ForegroundBlock(foreground,
-                        obj.GetString("target"));
+                        obj.GetString("target"),
+                        obj.GetUInt("id", 0));
 
                 case ForegroundType.Label:
                     return new ForegroundBlock(foreground,
@@ -146,7 +147,7 @@ namespace BotBits
                     return BlockArgsType.Number;
 
                 case ForegroundType.WorldPortal:
-                    return BlockArgsType.String;
+                    return BlockArgsType.WorldPortal;
 
                 case ForegroundType.Portal:
                     return BlockArgsType.Portal;
@@ -224,6 +225,12 @@ namespace BotBits
                         var message3 = Convert.ToString(args[3]);
                         return new ForegroundBlock(block, name, message1, message2, message3);
                     }
+                case BlockArgsType.WorldPortal:
+                    {
+                        var text = Convert.ToString(args[0]);
+                        var id = Convert.ToUInt32(args[1]);
+                        return new ForegroundBlock(block, text, id);
+                    }
                 default:
                     throw new ArgumentException("Invalid block.", nameof(block));
             }
@@ -245,6 +252,8 @@ namespace BotBits
                     return new ArgumentException("Portal blocks require three parameters in the following order: id (int) target (int) rotation (Morph.Portal).", paramName);
                 case BlockArgsType.Label:
                     return new ArgumentException("Label blocks require two parameters in the following order: text (string) hex color (string).", paramName);
+                case BlockArgsType.WorldPortal:
+                    return new ArgumentException("World Portal blocks need a string followed by a number", paramName);
                 default:
                     return new ArgumentException("Invalid arguments for the given block!", paramName);
             }

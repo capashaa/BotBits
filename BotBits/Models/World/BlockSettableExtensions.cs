@@ -45,6 +45,11 @@ namespace BotBits
         {
             blocks.Place(x, y, new ForegroundBlock(block, text, signColor));
         }
+
+        public static void Place(this Blocks blocks, int x, int y, Foreground.Id block, string text, int id)
+        {
+            blocks.Place(x, y, new ForegroundBlock(block, text, (uint)id));
+        }
         public static void Place(this Blocks blocks, int x, int y, Foreground.Id block, string name, string message1, string message2, string message3)
         {
             blocks.Place(x, y, new ForegroundBlock(block, name, message1,message2,message3));
@@ -113,6 +118,11 @@ namespace BotBits
         public static void Set(this IBlockSettable<ForegroundBlock, BackgroundBlock> blocks, Foreground.Id block, string text, Morph.Id signColor)
         {
             blocks.Set(new ForegroundBlock(block, text, signColor));
+        }
+
+        public static void Set(this IBlockSettable<ForegroundBlock, BackgroundBlock> blocks, Foreground.Id block, string text, int id)
+        {
+            blocks.Set(new ForegroundBlock(block, text, (uint)id));
         }
 
         public static void Set(this IBlockSettable<ForegroundBlock, BackgroundBlock> blocks, Foreground.Id block, 
@@ -196,6 +206,11 @@ namespace BotBits
         public static void Set<T>(this IEnumerable<T> blocks, Foreground.Id block, string text, Morph.Id signColor) where T : IBlockSettable<ForegroundBlock, BackgroundBlock>
         {
             blocks.Set(new ForegroundBlock(block, text, signColor));
+        }
+
+        public static void Set<T>(this IEnumerable<T> blocks, Foreground.Id block, string text, int id) where T : IBlockSettable<ForegroundBlock, BackgroundBlock>
+        {
+            blocks.Set(new ForegroundBlock(block, text, (uint)id));
         }
 
         public static void Set<T>(this IEnumerable<T> blocks, Foreground.Id block,
@@ -285,6 +300,11 @@ namespace BotBits
         public static void SetMany<T>(this IEnumerable<IEnumerable<T>> blocks, Foreground.Id block, string text, Morph.Id signColor) where T : IBlockSettable<ForegroundBlock, BackgroundBlock>
         {
             blocks.SetMany(new ForegroundBlock(block, text, signColor));
+        }
+
+        public static void SetMany<T>(this IEnumerable<IEnumerable<T>> blocks, Foreground.Id block, string text, int id) where T : IBlockSettable<ForegroundBlock, BackgroundBlock>
+        {
+            blocks.SetMany(new ForegroundBlock(block, text, (uint)id));
         }
 
         public static void SetMany<T>(this IEnumerable<IEnumerable<T>> blocks, Foreground.Id block,

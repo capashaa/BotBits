@@ -8,6 +8,7 @@
         Portal,
         Label,
         Sign,
-        NPC
+        NPC,
+        WorldPortal
     }
 }

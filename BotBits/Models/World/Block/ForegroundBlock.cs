@@ -48,6 +48,13 @@ namespace BotBits
             this.Id = id;
         }
 
+        public ForegroundBlock(Foreground.Id id, string text, uint idd)
+    : this(id, BlockArgsType.WorldPortal)
+        {
+            this._args = new WorldPortalArgs(text, idd);
+            this.Id = id;
+        }
+
         public ForegroundBlock(Foreground.Id id, uint portalId, uint portalTarget, Morph.Id portalRotation)
             : this(id, BlockArgsType.Portal)
         {
@@ -123,13 +130,13 @@ namespace BotBits
             {
                 switch (this.Type)
                 {
-                    case ForegroundType.WorldPortal:
-                        return this.GetStringArgs();
+                    
                     case ForegroundType.Label:
                         return this.GetLabelArgs()?.Text;
                     case ForegroundType.Sign:
                         return this.GetSignArgs()?.Text;
-
+                    case ForegroundType.WorldPortal:
+                        return this.GetWorldPortalArgs()?.Text;
                     default:
                         throw new InvalidOperationException(
                             "This property can only be accessed on label, world portal and sign blocks.");
@@ -268,7 +275,23 @@ namespace BotBits
                 return this.GetPortalArgs()?.PortalId ?? default(uint);
             }
         }
+        /// <summary>
+        ///     Gets the world portal id. (only worldportal)
+        /// </summary>
+        /// <value>
+        ///     The id
+        /// </value>
+        /// <exception cref="System.InvalidOperationException">This property can only be accessed on goal or portal blocks.</exception>
 
+        public uint WorldPortalId
+        {
+            get
+            {
+                if (this.Type != ForegroundType.WorldPortal) throw new InvalidOperationException("This property can only be accessed on World Portals.");
+
+                return this.GetWorldPortalArgs()?.Id ?? default(uint);
+            }
+        }
         /// <summary>
         ///     Gets the target. (Only on goal or portal blocks)
         /// </summary>
@@ -276,6 +299,7 @@ namespace BotBits
         ///     The goal.
         /// </value>
         /// <exception cref="System.InvalidOperationException">This property can only be accessed on goal or portal blocks.</exception>
+
         public uint Target
         {
             get
@@ -318,7 +342,6 @@ namespace BotBits
 
                     case ForegroundType.Sign:
                         return this.GetSignArgs()?.SignColor ?? default(Morph.Id);
-
                     default:
                         throw new InvalidOperationException("This property can only be accessed on morphable blocks.");
                 }
@@ -351,6 +374,11 @@ namespace BotBits
         private SignArgs GetSignArgs()
         {
             return this._args as SignArgs;
+        }
+
+        private WorldPortalArgs GetWorldPortalArgs()
+        {
+            return this._args as WorldPortalArgs;
         }
 
         private class NPCArgs : IEquatable<NPCArgs>
@@ -555,6 +583,51 @@ namespace BotBits
             }
         }
 
+        private class WorldPortalArgs : IEquatable<WorldPortalArgs>
+        {
+            public WorldPortalArgs(string text, uint id)
+            {
+                this.Text = text;
+                this.Id = id;
+            }
+
+            public string Text { get; }
+            public uint Id { get; }
+
+            public bool Equals(WorldPortalArgs other)
+            {
+                if (ReferenceEquals(null, other)) return false;
+                if (ReferenceEquals(this, other)) return true;
+                return string.Equals(this.Text, other.Text) && Equals(this.Id, other.Id);
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(null, obj)) return false;
+                if (ReferenceEquals(this, obj)) return true;
+                if (obj.GetType() != this.GetType()) return false;
+                return this.Equals((WorldPortalArgs)obj);
+            }
+
+            public override int GetHashCode()
+            {
+                unchecked
+                {
+                    return ((this.Text?.GetHashCode() ?? 0) * 397) ^ (int)this.Id;
+                }
+            }
+
+            public static bool operator ==(WorldPortalArgs left, WorldPortalArgs right)
+            {
+                return Equals(left, right);
+            }
+
+            public static bool operator !=(WorldPortalArgs left, WorldPortalArgs right)
+            {
+                return !Equals(left, right);
+            }
+        }
+
         public object[] GetArgs()
         {
             switch (WorldUtils.GetBlockArgsType(this.Type))
@@ -569,6 +642,8 @@ namespace BotBits
                     return new object[] { this.Text };
                 case BlockArgsType.Sign:
                     return new object[] { this.Text, (uint)this.Morph };
+                case BlockArgsType.WorldPortal:
+                    return new object[] { this.Text, this.WorldPortalId};
                 case BlockArgsType.Label:
                     return new object[] { this.Text, this.TextColor, this.WrapWidth };
                 case BlockArgsType.NPC:
