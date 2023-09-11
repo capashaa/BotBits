@@ -124,7 +124,7 @@ namespace BotBits
         ///     Gets or sets the smiley border
         /// </summary>
         /// <value>The Smiley Border</value>
-        public int SmileyBorder { get; internal set; }
+        public SmileyBorder SmileyBorder { get; internal set; }
 
         /// <summary>
         ///     Gets or sets the smiley eyes

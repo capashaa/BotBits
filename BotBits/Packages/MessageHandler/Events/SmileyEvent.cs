@@ -19,7 +19,7 @@ namespace BotBits.Events
         {
             this.SmileyShape = (SmileyShape)message.GetInteger(0);
             this.SmileyColour = (SmileyColour)message.GetInt(1);
-            this.SmileyBorder = message.GetInt(2);
+            this.SmileyBorder = (SmileyBorder)message.GetInt(2);
             this.SmileyEyes = (SmileyEyes)message.GetInt(3);
             this.SmileyMouth = (SmileyMouth)message.GetInt(4);
             this.SmileyAddon = (SmileyAddon)message.GetInt(5);
@@ -44,7 +44,7 @@ namespace BotBits.Events
         ///     Gets or sets the smiley border
         /// </summary>
         /// <value>The Smiley Border</value>
-        public int SmileyBorder { get; set; }
+        public SmileyBorder SmileyBorder { get; set; }
 
         /// <summary>
         ///     Gets or sets the smiley eyes

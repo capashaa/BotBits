@@ -103,7 +103,7 @@ namespace BotBits
                 .ToSafeTask();
         }
 
-        public Task SetSmileyAsync(SmileyShape shape, SmileyColour colour, int border, SmileyEyes eyes, SmileyMouth mouth, SmileyAddon addon, SmileyAbove above, SmileyBelow below, SmileyWings wings)
+        public Task SetSmileyAsync(SmileyShape shape, SmileyColour colour, SmileyBorder border, SmileyEyes eyes, SmileyMouth mouth, SmileyAddon addon, SmileyAbove above, SmileyBelow below, SmileyWings wings)
         {
             return this.MakeRPCCallAsync("changeSmiley", shape,colour,border,eyes,mouth,addon,above,below,wings);
         }
