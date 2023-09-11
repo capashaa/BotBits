@@ -521,6 +521,10 @@ namespace BotBits
             [Pack("brickgodblock")]
             public const Id
                 GodBlock = (Id)1516;
+
+            /*[Pack("brickworldportal", ForegroundType = ForegroundType.WorldPortalSpawn)]
+            public const Id
+                WorldPortalSpawn = (Id)1582;*/
         }
 
         public static class Crown
