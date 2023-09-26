@@ -175,7 +175,7 @@ The possibilities are endless!
 Oh and special blocks are supported too:
 ```csharp
 Blocks.Of(bot).Place(x, y, Foregrounds.Portal.Normal, 0, 1, Morph.Portal.Left);
-Blocks.Of(bot).Place(x, y, Foregrounds.Portal.World, "PW01");
+Blocks.Of(bot).Place(x, y, Foregrounds.Portal.World, "PW01", 0);
 Blocks.Of(bot).Place(x, y, Foregrounds.Coin.GoldDoor, 10);
 Blocks.Of(bot).Place(x, y, Foregrounds.OneWay.Pink, Morph.OneWay.Down);
 Blocks.Of(bot).Place(x, y, Foregrounds.SciFi.BlueSlope, Morph.SciFiSlope.InSouthEastPart);
