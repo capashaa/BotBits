@@ -22,13 +22,10 @@ namespace BotBits.Demo
                 login = data[0];
                 pass = data[1];
             }
-            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PW3ZY7DVF5c0I");
-
-            Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, 
+            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PWGnnAiEaAc0I");
+            /*Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, 
                 SmileyBorder.White, SmileyEyes.Coy, SmileyMouth.Smile, SmileyAddon.Nothing, 
-                SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);
-
-            Blocks.Of(bot).Place(10, 10, Foreground.Portal.World, "PW01", 0);
+                SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);*/
 
             Thread.Sleep(Timeout.Infinite);
         }
@@ -37,5 +34,7 @@ namespace BotBits.Demo
         {
             //Console.WriteLine(e.New.Block.Message2);
         }
+
+        
     }
 }
