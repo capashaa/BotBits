@@ -54,7 +54,8 @@ Lots of things your player can do are in the `Actions` class:
 ```csharp
 Actions.Of(bot).GodMode(true);
 Actions.Of(bot).Move(10 * 16, 10 * 16); // Move to 10x10
-Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, SmileyBorder.White, SmileyEyes.Coy, SmileyMouth.Smile, SmileyAddon.Nothing, SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);
+Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, SmileyBorder.White, SmileyEyes.Coy,
+SmileyMouth.Smile, SmileyAddon.Nothing, SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);
 ```
 
 You can chat and use chat commands with the `Chat` class:
