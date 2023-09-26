@@ -6,14 +6,26 @@ BotBits is the most popular bot library made specifically for Everybody Edits. M
 
 
 ## Usage
-Step 1: Import BotBits' namespaces
+
+Step 1: Download and extract the DLL-File  
+
+You can find the latest release [Here](https://github.com/capashaa/BotBits/releases/latest).  
+Click on BotBits.zip, and Download. Then extract the files.  
+
+Step 2: Import references  
+
+Rightclick on References in your tool. Then click Add references.  
+Select the BotBit's DLL-File. Then go to next step.  
+
+
+Step 3: Import BotBits' namespaces
 ```csharp
 using BotBits;
 using BotBits.Events;
 using BotBits.SendMessages;
 ```
 
-Step 2: Create a new BotBitsClient instance
+Step 4: Create a new BotBitsClient instance
 ```csharp
 BotBitsClient bot = new BotBitsClient();
 ```
