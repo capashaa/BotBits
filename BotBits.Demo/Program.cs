@@ -22,19 +22,13 @@ namespace BotBits.Demo
                 login = data[0];
                 pass = data[1];
             }
-            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PWGnnAiEaAc0I");
+            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PW8sK_lUyFc0I");
             /*Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, 
                 SmileyBorder.White, SmileyEyes.Coy, SmileyMouth.Smile, SmileyAddon.Nothing, 
                 SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);*/
-
+            //Blocks.Of(bot).Place(2, 2, Foreground.Basic.Green);
             Thread.Sleep(Timeout.Infinite);
         }
-        [EventListener]
-        static void On(ForegroundPlaceEvent e)
-        {
-            //Console.WriteLine(e.New.Block.Message2);
-        }
-
         
     }
 }

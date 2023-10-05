@@ -205,8 +205,7 @@ namespace BotBits
         private static BlockDataWorld GetWorld(Message m, int width, int height)
         {
             var world = new BlockDataWorld(width, height);
-            var datas = InitParse.Parse(m);
-
+            var datas = m.Type == "init" ? InitParse.Parse(m.GetByteArray(49)) : InitParse.Parse(m.GetByteArray(1));
             foreach (var data in datas)
             {
                 var block = data.Type;
@@ -261,4 +260,53 @@ namespace BotBits
                 : new ExpectedData<BackgroundBlock>(this.Foreground[p].Placer, this.Background[p].Block, false);
         }
     }
+    public class DataChunk
+    {
+        public int Layer { get; set; }
+        public uint Type { get; set; }
+        public Point[] Locations { get; set; }
+        public object[] Args { get; set; }
+
+        public DataChunk(int layer, uint type, byte[] xs, byte[] ys, object[] args)
+        {
+            Layer = layer;
+            Type = type;
+            Args = args;
+            Locations = GetLocations(xs, ys);
+        }
+
+        private static Point[] GetLocations(byte[] xs, byte[] ys)
+        {
+            var points = new List<Point>();
+            for (var i = 0; i < xs.Length; i += 2) points.Add(new Point((xs[i] << 8) | xs[i + 1], (ys[i] << 8) | ys[i + 1]));
+            return points.ToArray();
+
+        }
+
+        public class Point
+        {
+            public int X { get; set; }
+            public int Y { get; set; }
+
+            public Point(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
+    }
+
+    public class Block
+    {
+        public int id { get; set; }
+
+        public int x, y, layer;
+        public object[] args { get; set; }
+        public Block(int blockID, params object[] args)
+        {
+            this.id = blockID;
+            this.args = args;
+        }
+    }
+
 }
