@@ -127,51 +127,133 @@ namespace Yonom.EE
             return output.ToArray();
         }
 
-        //Detect and read rotations or morphs
+        //Detect and read rotations
         public static int[] rotationNew =
         {
-        //One ways
-        1001, 1002, 1003, 1004, 1052,
-        1053, 1054, 1055, 1056, 1092,
-        //Spikes
-        361, 1625, 1627, 1629, 1631, 1633, 1635,
-        //Half blocks
-        1075, 1076, 1077, 1078, 1116, 1117, 1118,
-        1119, 1120, 1121,1122, 1123, 1124, 1125,
-        1041, 1042, 1043, 
-        //Morph
-        375, 376, 377, 379, 380, 438, 439, 378,
-        338,339, 340,447,448,1536,1537,
-        449,450,451,452,1538,456,457,458,
-        475, 476, 477,1502,1500,499,464,465,
-        471,481,482,483,497,492,493,494,
-        1507,1506,1581,1587,1588,1592,1593,
-        1594,1595,1597,1596,1605,1606,
-        1607,1608,1609,1610,1611,1612,
-        1614,1615,1616,1617,276,277,279,
-        280,440,275,329,273,328,327,1535,
-        1140,1141,1134,1135,1155,1160,
-        //Misc
-        1517
-    };
+            //Glowy Lines
+            376, 375, 379, 380, 377, 376, 438, 439,
+
+
+            //OneWay
+            1001,1002, 1003,1004, 1052,
+            1053, 1054, 1055, 1056, 1092,
+
+
+            //Spikes
+            361, 1625, 1627, 1629, 1631, 1633, 1635,
+
+            //## Morph
+
+            //Medival
+            275, 327, 328, 273, 329,440,
+
+            //Monster
+            338, 339, 340,
+
+            //Domestic
+            447, 448, 449, 450, 451, 452, 1537, 1538,
+
+            //Halloween 2015
+            456, 457, 458,
+
+            //Fairytale
+            471,
+
+            //Spring
+            475, 476, 477,
+
+            //Summer
+            483, 481, 482,
+
+            //Restaurant
+            494, 492, 493,
+
+            //Halloween 2016
+            1502, 499, 1500,
+
+            //Toxic
+            1587,
+
+            //Sewer
+            1588, 1155,
+
+            //dungeon
+            1592, 1593, 1160, 1594, 1595, 1597,
+
+
+            //New year 2015
+            464, 465,
+
+            //Cave 
+            497, 
+
+            //Christmas 2016
+            1506, 1507,
+
+            //Dojo
+            276, 277, 279, 280,
+
+            //Industrial
+            1134, 1135, 1535, 1536,
+
+            //Fireworks
+            1581,
+
+            //Shadow
+            1596, 1605, 1606, 1607, 1609, 1610,
+            1611, 1612, 1614, 1615, 1616, 1617,
+
+            //## Half Blocks
+
+            //Domestic
+            1042, 1043, 1041,
+
+            //Fairytale
+            1075, 1076, 1077, 1078,
+
+            //Basic
+            1116,1117, 1118, 1119, 1120, 1121,
+            1122, 1123, 1124, 1125,
+
+            //Winter 2018
+            1140, 1141,
+
+            //## Effects
+
+            //Gravity 
+            1517,
+
+        };
 
         //Detect and read blocks with values
         public static int[] goalNew =
         {
-        165, 214, //coin gates
-        43, 213, //coin doors
-        1011, 1012, //death doors and gates
-        185, 184, 1619, 113, //purple switches
-        1080, 1079, 1620, 467, //orange switches
-        423, 1028, 1027, //team
-        1584, 422, 418, 420, 453, 461, 419, 417 //effects
-    };
+            //Coin door/gates
+            43, 165, 213, 214,
+
+            //Death door/gate
+            1011, 1012,
+
+            //Purple switches
+            184, 185, 113, 1619,
+
+            //orange switches
+            1079, 1080, 467, 1620,
+                    
+
+            //Team Effects 
+            423, 1027, 1028,
+
+            /*Effects: Curse, Zombie, Poison, Fly, 
+            Protection, Lowgravity, Jump, Speed, Multijump*/
+            421, 422, 1584, 418, 420, 453, 417, 419, 461
+        };
 
         public static int[] coloredBlocks =
         {
-        631, 632, 633, //basic, canvas, checkered bgs
-        1200 //basic block
-    };
+            631, 632, 633, //basic, canvas, checkered bgs
+            1200 //basic block
+        };
 
         public static bool isNPC(int id)
         {

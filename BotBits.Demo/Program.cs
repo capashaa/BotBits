@@ -22,7 +22,7 @@ namespace BotBits.Demo
                 login = data[0];
                 pass = data[1];
             }
-            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PW8sK_lUyFc0I");
+            Login.Of(bot).WithEmail(login, pass).CreateJoinRoom("PW01");
             /*Actions.Of(bot).ChangeSmiley(SmileyShape.Regular, SmileyColour.Yellow, 
                 SmileyBorder.White, SmileyEyes.Coy, SmileyMouth.Smile, SmileyAddon.Nothing, 
                 SmileyAbove.Nothing, SmileyBelow.Nothing, SmileyWings.Nothing);*/
